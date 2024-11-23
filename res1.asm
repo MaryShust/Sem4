@@ -7,9 +7,9 @@ section .bss
 
 section .text
     extern printf
-    global _start
+ 
 
-_start:
+main:
     ; Читаем число с консоли
     mov eax, 3             ; syscall: sys_read
     mov ebx, 0             ; файл: stdin
