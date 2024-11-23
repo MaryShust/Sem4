@@ -1,6 +1,6 @@
 section .data
     fmt db "%.2f", 10, 0  ; формат для вывода числа с плавающей точкой
-    inputBuffer resb 20    ; буфер для ввода числа
+    inputBuffer db 20 dup(0) ; буфер для ввода числа
     two dq 2.0
     neg_two dq -2.0
     neg_half dq -0.5
@@ -14,9 +14,11 @@ section .bss
     result resq 1         ; резервируем 8 байт для результата
 
 section .text
+    global main
     extern printf
     extern strtod
-    global main
+    ; Указываем, что стек не исполняемый
+    section .note.GNU-stack ; Чтобы убрать предупреждение
 
 main:
     ; Читаем число с консоли
