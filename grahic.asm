@@ -43,7 +43,7 @@ main:
     ; Определяем диапазон и вычисляем y
     fst st0                ; сохраняем значение в st0 для дальнейших вычислений
     fld st0                ; дублируем значение
-    fadd qword [negate8]   ; x + 8
+    fadd qword [neg8]   ; x + 8
     fmul st0, st0          ; (x + 8)^2
     fsub qword [four]      ; 4 - 4 * (x + 8)^2
     fsqrt                   ; sqrt(4 - 4(x + 8)^2)
