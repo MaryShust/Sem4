@@ -81,7 +81,7 @@ below_neg4:
 
 print_result:
     mov rdi, fmt          ; формат
-    movq rsi, [result]    ; передаем адрес результата
+    mov rsi, [result]    ; передаем адрес результата
     call printf           ; печатаем результат
 
     ; Завершаем программу
