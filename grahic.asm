@@ -10,8 +10,8 @@ section .data
     neg8 dq -8.0
 
 section .bss
-    num resb 20           ; резервируем 20 байт для ввода числа
-    result resq 1         ; резервируем 8 байт для результата
+    num resb 20           
+    result resq 1        
 
 section .text
     extern printf
